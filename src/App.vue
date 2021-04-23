@@ -1,32 +1,20 @@
 <template>
   <div id="app">
-    <label for="locale">locale</label>
-    <select v-model="locale">
-      <option>en</option>
-      <option>ja</option>
-    </select>
-    <p>message: {{ $t('hello') }}</p>
+    <button @click="visible = true">show</button>
+    <button @click="visible = false">destroy</button>
+    <sub-app v-if="visible"></sub-app>
   </div>
 </template>
 
-<i18n>
-{
-  "en": {
-    "hello": "hello world!"
-  },
-  "ja": {
-    "hello": "こんにちは、世界！"
-  }
-}
-</i18n>
-
 <script>
+import subApp from './child_app'
 export default {
-  name: 'App',
-  data () { return { locale: 'en' } },
-  watch: {
-    locale (val) {
-      this.$i18n.locale = val
+  components: {
+    subApp,
+  },
+  data() {
+    return {
+      visible: false
     }
   }
 }
