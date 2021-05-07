@@ -1,6 +1,6 @@
-# sfc
+# vue_i18n_issue
 
-> vue-i18n custom blocks example
+> vue-i18n-issue #1191
 
 ## Project setup
 ```
